@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrefour Mall</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .entertainment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+            justify-items: center;
+        }
+        .entertainment-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .entertainment-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .entertainment-overview {
+            justify-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="index.html">Carrefour Mall</a></center></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restaurant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+           
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for entertainment...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Entertainment Section -->
+    <section id="entertainment">
+        <div class="entertainment-overview">
+            <h1>HAVE FUN!</h1>
+        </div>
+        <div class="entertainment-grid">
+            <!-- Entertainment Items Here -->
+            <div class="entertainment-item">
+                <h3>Video Game Arcade</h3>
+                <img src="image/Video Game Arcade.jfif" alt="Video Game Arcade">
+                <p>With the holidays around the corner (and after many, many hours of playtime),
+                     we've made our picks for the best games of 2024.
+                     These titles represent a wide range of genres and platforms,
+                      offering something for everyone no matter how you play.</p>
+            </div>
+            <div class="entertainment-item">
+                <h3>Sky Jumper</h3>
+                <img src="image/Sky Jumper.jfif" alt="Sky Jumper">
+                <p>Dive into the ultimate family fun zone at SkyJumper Trampoline Park!
+                    It's not just an amusement park but a fusion of fitness, sports, and thrills.
+                     Perfect for birthday bashes, school outings, corporate get-togethers, or any lively gathering</p>
+            </div>
+            <div class="entertainment-item">
+                <h3>GO-Kart</h3>
+                <img src="image/GO-Kart.jfif" alt="GO-Kart">
+                <p>Family-Friendly Fun Bring the whole crew for a day of excitement with our dual karts*,
+                     junior karts, and adult karts, ensuring fun for everyone in the family. 
+                     From little racers to seasoned drivers, our tracks are designed to cater to all skill levels.
+                     Book your family adventure today and experience the joy of e-karting together!</p>
+            </div>
+            <div class="entertainment-item">
+                <h3>Movies</h3>
+                <img src="image/Movies.jfif" alt="Movies">
+                <p>Watch the latest blockbusters and enjoy a premium cinema experience at our state-of-the-art movie theaters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carrefour Mall. All rights reserved.</p>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutmall.html">About</a></li>
+            <li><a href="contactmall.html">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shopping Mall - Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional or overridden styles can go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        .search-bar {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        nav .search-bar button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        .categories {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .categories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .categories ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .categories ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .product-item h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-item p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .product-item .price {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin: 0.5rem 0;
+        }
+
+        .product-item button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .order-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .order-button:hover {
+            background-color: #f4a261;
+        }
+
+    </style>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemIndex = cart.findIndex(item => item.name === itemName);
+
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += 1; // Increase quantity if item already exists
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + ' has been added to your cart.');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = itemCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="index.html">  Carrefour  Mall.</a></center></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restourant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop -->
+    <section id="shop">
+        <div class="categories">
+            <h2>Shop Clothes/Bags/Shoes</h2>
+           
+        </div>
+        <div class="product-grid">
+            <!-- Product Items Here -->
+            <div class="product-item">
+                <img src="image/OIP (1).jfif" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>For women</p>
+                <p class="price">$50.00</p>
+                <button onclick="addToCart('Product 1', 50.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP (2).jfif" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Stock</p>
+                <p class="price">$70.00</p>
+                <button onclick="addToCart('Product 2', 70.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP (3).jfif" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>For men</p>
+                <p class="price">$60.00</p>
+                <button onclick="addToCart('Product 3', 60.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP (4).jfif" alt="Product 4">
+                <h3>Product 4</h3>
+                <p>Description of Product 4</p>
+                <p class="price">$55.00</p>
+                <button onclick="addToCart('Product 4', 55.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP (5).jfif" alt="Product 5">
+                <h3>Basketball Shoes</h3>
+                <p>For boys</p>
+                <p class="price">$80.00</p>
+                <button onclick="addToCart('Basketball Shoes', 80.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/airmax.jpg" alt="Product 6">
+                <h3>Airmax</h3>
+                <p>For boys & girls</p>
+                <p class="price">$65.00</p>
+                <button onclick="addToCart('airmax', 65.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/all stars.jfif" alt="Product 6">
+                <h3>All stars</h3>
+                <p>For boys & girls</p>
+                <p class="price">$65.00</p>
+                <button onclick="addToCart('allstarsshoes', 65.00)">Add to Cart</button>
+            </div> <div class="product-item">
+                <img src="image/running.jfif" alt="Product 6">
+                <h3>running</h3>
+                <p>For boys & girls</p>
+                <p class="price">$65.00</p>
+                <button onclick="addToCart('runningshoes', 65.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP.jfif" alt="Product 7">
+                <h3>Product 7</h3>
+                <p>For girls</p>
+                <p class="price">$45.00</p>
+                <button onclick="addToCart('Product 7', 45.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/OIP (1).jfif" alt="Product 8">
+                <h3>Product 8</h3>
+                <p>For men</p>
+                <p class="price">$75.00</p>
+                <button onclick="addToCart('Product 8', 75.00)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <a href="cartpage.html" class="order-button">View Cart (<span id="cart-count">0</span>)</a>
+    <footer>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="mailto:contact@example.com">Contact</a></li>
+        </ul>
+        <p>&copy;  2024 Carrefour&mdash; Mall.All rights reserved.</p>
+       
+    </footer>
+</body>
+</html>

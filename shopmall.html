@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shopping Mall - Brands</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional or overridden styles can go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 24px;
+       
+        }
+
+      
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-top: 0.5rem;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+        
+        /* Search Bar Styling */
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-bar input[type="text"] {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #f4a261;
+            color: #fff;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .search-bar button:hover {
+            background: #e76f51;
+        }
+
+        .brand-overview {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .brand-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .brand-item img {
+            width: 200px;  /* Adjusted size */
+            height: 200px;  /* Adjusted size */
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .brand-item h3 {
+            margin: 0.5rem 0;
+        }
+
+        .brand-item a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="index.html">Carrefour Mall</a></center></div>
+        <nav>
+            <ul>
+                <li><a href="mall.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restourant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+     <!-- Brands Section -->
+     <section id="brands">
+        <div class="brand-overview">
+            <h1>Explore Our Top Shoe Brands</h1>
+            <p>Discover a wide range of quality shoe brands available at ShoeMall250. From high-end fashion to everyday comfort, we have something for everyone.</p>
+        </div>
+        <div class="brand-grid">
+            <!-- Brand Items Here -->
+            <div class="brand-item">
+                <h3>Hypermarket</h3>
+                <img src="image/hypermarkert.jfif" alt="Brand 1">
+                <a href="shophyper.html">Check Out</a>
+            </div>
+            <div class="brand-item">
+                <h3>Clothes/Bags/Shoes</h3>
+                <img src="image/clothes.jfif" alt="Brand 2">
+                <a href="shopshoes.html">Check Out</a>
+            </div>
+            <div class="brand-item">
+                <h3>Jewellery</h3>
+                <img src="image/jewery.jfif" alt="Brand 3">
+                <a href="shopjewerlty.html">Check Out</a>
+            </div>
+            <div class="brand-item">
+                <h3>Perfumes</h3>
+                <img src="image/perfumes.jfif" alt="Brand 4">
+                <a href="shopperfumes.html">Check Out</a>
+            </div>
+            <!-- Add more brand items as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShoeMall. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-of-service">Terms of Service</a></li>
+            <li><a href="contactmall.html">Contact +250780146863</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

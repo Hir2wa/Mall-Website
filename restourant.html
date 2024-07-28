@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shopping Mall - Shop</title>
+  <style>
+    /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #f4a261;
+    color: #fff;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background: #e76f51;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Shop Section */
+#shop {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.categories h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-item h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.product-item button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.product-item button:hover {
+    background-color: #555;
+}
+
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="index.html">Carrefour mall</a></div></center>
+        <nav>
+            <ul>
+                <li><a href="mall.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restourant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop -->
+    <section id="shop">
+        <div class="categories">
+            <h2>VIEW STORES BY CATEGORY</h2>
+        </div>
+        <div class="product-grid">
+            <!-- Product Items Here -->
+            <div class="product-item">
+                <h3>Fast Food</h3>
+                <img src="image/fastfood.jfif" alt="Fast Food">
+                <p>
+                    At Carrefour Mall, you can choose the best fast food from around the world.
+                    Enjoy the classic hamburger and fries combination at Hardee’s or McDonald’s. 
+                    There are also sweet treats on offer, from ice cream milkshakes to hot apple pies. Moreover,
+                    with fast-food deals on a choice of meals, it is a wallet-friendly option too.
+                </p>
+                <a href="fast food.html"><button>Add to Cart</button></a>
+            </div>
+            <div class="product-item">
+                <h3>Cafe</h3>
+                <img src="image/cafe.jfif" alt="Cafe">
+                <p>
+                    Take a well-earned break during your next shopping trip to the Mall of Egypt without leaving the comfort of the mall. 
+                    You’ll find a wide choice of cafés to suit every taste,
+                    and they’re all under one roof with your favourite shops and entertainment venues for your convenience.
+                    Whether you’re a coffee connoisseur or in need of a tea and cake-fix, browse below to find your top pick.
+                </p>
+                <a href="cafe.html"><button>Add to Cart</button></a>
+            </div>
+            <div class="product-item">
+                <h3>Organic Food</h3>
+                <img src="image/oranic food.jfif" alt="Organic Food">
+                <p>
+                    Whether you’re meeting with family or friends, eat better with our choice of healthy dining options at the mall. 
+                    The food on offer is tasty enough to celebrate the most important holidays or occasions.
+                    But delicious can also mean good for you.
+                    Take a look at our restaurants below to find your favourite healthy restaurants.
+                </p>
+                <a href="organic food.html"><button>Add to Cart</button></a>
+            </div>
+            <div class="product-item">
+                <h3>Dining</h3>
+                <img src="image/dining.jfif" alt="Dining">
+                <p>
+                    Give yourself a night off from cooking at home and enjoy a meal at one of our top-quality restaurants at Carrefour Mall. 
+                    From Italian food to contemporary Arabic restaurants, you can relax and treat yourself to all your favourite dishes,
+                    with even the fussiest eaters catered for. With plenty of on-site parking, it's easy to meet at the mall.
+                </p>
+                <a href="dining.html"><button>Add to Cart</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carrefour&mdash; Mall. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-of-service">Terms of Service</a></li>
+            <li><a href="contactmall.html">Contact +250780146863</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dining - Carrefour Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Styles for the grid and items */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns based on screen size */
+            gap: 20px;
+            padding: 20px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+            background-color: #fff;
+        }
+        .grid-item:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .grid-item img {
+            width: 100%; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Limit the height to ensure uniformity */
+            object-fit: cover; /* Ensure the image covers the container */
+            border-radius: 5px;
+            margin-bottom: 10px; /* Add space between the image and the text */
+        }
+        .order-button {
+            background-color:  #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block; /* Ensure the button has proper spacing */
+        }
+        .order-button:hover {
+            background-color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemIndex = cart.findIndex(item => item.name === itemName);
+
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += 1; // Increase quantity if item already exists
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + ' has been added to your cart.');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = itemCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+    </script>
+</head>
+<body>
+    <h1>Dining Options</h1>
+    <p style="text-align: center;">Discover our variety of dining items. Click "Add to Cart" to place an order.</p>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="image/chicken.jfif" alt="Chicken Wings">
+            <h3>Chicken Wings</h3>
+            <p>$9.99</p>
+            <button class="order-button" onclick="addToCart('Chicken Wings', 9.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Stuffed Mushrooms.jfif" alt="Stuffed Mushrooms">
+            <h3>Stuffed Mushrooms</h3>
+            <p>$12.99</p>
+            <button class="order-button" onclick="addToCart('Stuffed Mushrooms', 12.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Spaghetti Bolognese.jfif" alt="Spaghetti Bolognese">
+            <h3>Spaghetti Bolognese</h3>
+            <p>$18.99</p>
+            <button class="order-button" onclick="addToCart('Spaghetti Bolognese', 18.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Fish and Chips.jfif" alt="Fish and Chips">
+            <h3>Fish and Chips</h3>
+            <p>$16.99</p>
+            <button class="order-button" onclick="addToCart('Fish and Chips', 16.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/cake.jfif" alt="Cheesecake">
+            <h3>Cheesecake</h3>
+            <p>$14.99</p>
+            <button class="order-button" onclick="addToCart('Cheesecake', 14.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Rice Pilaf.jfif" alt="Rice Pilaf">
+            <h3>Rice Pilaf</h3>
+            <p>$17.99</p>
+            <button class="order-button" onclick="addToCart('Rice Pilaf', 17.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Spring Rolls.jfif" alt="Spring Rolls">
+            <h3>Spring Rolls</h3>
+            <p>$9.99</p>
+            <button class="order-button" onclick="addToCart('Spring Rolls', 9.99)">Add to Cart</button>
+        </div>
+        <div class="grid-item">
+            <img src="image/Mashed Potatoes.jfif" alt="Mashed Potatoes">
+            <h3>Mashed Potatoes</h3>
+            <p>$15.99</p>
+            <button class="order-button" onclick="addToCart('Mashed Potatoes', 15.99)">Add to Cart</button>
+        </div>
+    </div>
+    <a href="cartpage.html" class="order-button">View Cart (<span id="cart-count">0</span>)</a>
+</body>
+</html>

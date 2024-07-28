@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Order - Carrefour Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for order page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h2>Order Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="order-items">
+                <!-- Order items will be injected here by JavaScript -->
+            </tbody>
+        </table>
+        <p>Total: $<span id="order-total-display">0.00</span></p>
+        <form action="myorder.php" method="POST" onsubmit="return updateOrderForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Your Location:</label>
+                <input type="text" class="form-control" id="location" name="location" required>
+            </div>
+            <input type="hidden" id="order-items-hidden" name="items">
+            <input type="hidden" id="order-total-hidden" name="total">
+            <button type="submit" class="btn-primary">Place Order</button>
+        </form>
+    </div>
+    <script>
+        function loadOrder() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let orderItems = document.getElementById('order-items');
+            let orderTotalDisplay = document.getElementById('order-total-display');
+            let total = 0;
+
+            orderItems.innerHTML = '';
+
+            cart.forEach(item => {
+                let itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                orderItems.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>${item.quantity}</td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+
+            orderTotalDisplay.innerText = total.toFixed(2);
+        }
+
+        function updateOrderForm() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let items = [];
+            let total = 0;
+
+            cart.forEach(item => {
+                let itemTotal = item.price * item.quantity;
+                items.push({
+                    name: item.name,
+                    price: item.price,
+                    quantity: item.quantity,
+                    total: itemTotal
+                });
+                total += itemTotal;
+            });
+
+            let itemsJson = JSON.stringify(items);
+            console.log(itemsJson);  // Debug: Check the JSON structure
+            document.getElementById('order-items-hidden').value = itemsJson;
+            document.getElementById('order-total-hidden').value = total.toFixed(2);
+
+            return true;  // Ensure the form submits
+        }
+
+        document.addEventListener('DOMContentLoaded', loadOrder);
+    </script>
+</body>
+</html>

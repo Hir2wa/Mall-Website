@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Shopping Mall - Kids' Shoes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional or overridden styles can go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+        }
+
+        .search-bar {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        nav .search-bar button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .product-item h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-item p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .product-item .price {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin: 0.5rem 0;
+        }
+
+        .product-item button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view-cart-button {
+            display: block;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .view-cart-button button {
+            padding: 0.75rem 1.5rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemIndex = cart.findIndex(item => item.name === itemName);
+
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += 1; // Increase quantity if item already exists
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + ' has been added to your cart.');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = itemCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">ShoeMall</a></div>
+        <nav>
+            <ul>
+                <li><a href="mall.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="brandsmall.html">Brands</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Kids' Shoes -->
+    <section id="kids-shoes">
+        <div class="product-list">
+            <h2>Kids' Shoes</h2>
+            <div class="product-grid">
+                <!-- Product Items Here -->
+                <div class="product-item">
+                    <img src="kids/download (1).jfif" alt="Kids' Shoe 1">
+                    <h3>Kids' Shoe 1</h3>
+                    <p>Short description of Kids' Shoe 1.</p>
+                    <p class="price">$80.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 1', 80.00)">Add to Cart</button>
+                    <a href="kids-shoe1.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/download (2).jfif" alt="Kids' Shoe 2">
+                    <h3>Kids' Shoe 2</h3>
+                    <p>Short description of Kids' Shoe 2.</p>
+                    <p class="price">$85.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 2', 85.00)">Add to Cart</button>
+                    <a href="kids-shoe2.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/download (3).jfif" alt="Kids' Shoe 3">
+                    <h3>Kids' Shoe 3</h3>
+                    <p>Short description of Kids' Shoe 3.</p>
+                    <p class="price">$90.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 3', 90.00)">Add to Cart</button>
+                    <a href="kids-shoe3.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/OIP (1).jfif" alt="Kids' Shoe 4">
+                    <h3>Kids' Shoe 4</h3>
+                    <p>Short description of Kids' Shoe 4.</p>
+                    <p class="price">$95.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 4', 95.00)">Add to Cart</button>
+                    <a href="kids-shoe4.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/OIP (2).jfif" alt="Kids' Shoe 5">
+                    <h3>Kids' Shoe 5</h3>
+                    <p>Short description of Kids' Shoe 5.</p>
+                    <p class="price">$100.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 5', 100.00)">Add to Cart</button>
+                    <a href="kids-shoe5.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/OIP (3).jfif" alt="Kids' Shoe 6">
+                    <h3>Kids' Shoe 6</h3>
+                    <p>Short description of Kids' Shoe 6.</p>
+                    <p class="price">$105.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 6', 105.00)">Add to Cart</button>
+                    <a href="kids-shoe6.html">View Product</a>
+                </div>
+                <div class="product-item">
+                    <img src="kids/OIP.jfif" alt="Kids' Shoe 7">
+                    <h3>Kids' Shoe 7</h3>
+                    <p>Short description of Kids' Shoe 7.</p>
+                    <p class="price">$110.00</p>
+                    <button onclick="addToCart('Kids\' Shoe 7', 110.00)">Add to Cart</button>
+                    <a href="kids-shoe7.html">View Product</a>
+                </div>
+            </div>
+            <div class="view-cart-button">
+                <button onclick="window.location.href='cart.html'">View Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ShoeMall. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-of-service">Terms of Service</a></li>
+            <li><a href="contactmall.html">Contact +250780146863</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

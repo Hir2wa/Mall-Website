@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrefour&mdash; Mall</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional or overridden styles can go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: url(image/malli2.jfif);
+            text-align: center;
+            padding: 4rem 0;
+            color:white;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        .featured-products {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            justify-items: center;
+        }
+        .product-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+        .product-item img, .testimonial-item img {
+            max-width: 100px;
+            height: auto;
+        }
+        .product-content {
+            flex: 1;
+        }
+        .newsletter-signup form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0rem;
+        }
+        .newsletter-signup input[type="email"], .newsletter-signup button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+        }
+        .social-media-links {
+          
+        }
+        .social-media-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+    
+            /* Additional or overridden styles can go here */
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f8f8;
+                margin: 0;
+                padding: 0;
+            }
+            .hero {
+                text-align: center;
+                padding: 4rem 0;
+            }
+            .hero img {
+                max-width: 100%;
+                height: auto;
+            }
+            .featured-products, .testimonials, .newsletter-signup, .social-media-links {
+                text-align: center;
+                padding: 4rem 0;
+            }
+            .product-grid, .testimonial-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                justify-items: center;
+            }
+            .product-item, .testimonial-item {
+                background-color: #fff;
+                padding: 1rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: left;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+            .product-item img, .testimonial-item img {
+                max-width: 100px;
+                height: auto;
+            }
+            .product-content {
+                flex: 1;
+            }
+            .newsletter-signup form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            .newsletter-signup input[type="email"], .newsletter-signup button {
+                padding: 0.5rem;
+                font-size: 1rem;
+                border: 1px solid #ccc;
+            }
+            .social-media-links {
+                margin-top: 2rem;
+            }
+            .social-media-links a {
+                display: inline-block;
+                margin: 0 0.5rem;
+                font-size: 1.5rem;
+                color: #333;
+            }
+            .additional-info {
+                text-align: center;
+                padding: 2rem ;
+                background-color: #fff;
+                margin: 2rem ;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+        
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="">Carrefour mall</a></center></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restourant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="hero">
+           
+         
+           <h1>Welcome  SHOP WITH US</h1>
+<h2><center>Discover our latest fashion trends and exclusive deals at Carrefour Mall.
+     Shop a wide range of products from top brands and enjoy a seamless shopping experience. 
+     Visit us today to find your next favorite item!</center></h2>
+
+        </div>
+        
+        <div class="additional-info">
+            <p>Welcome to Carrefour Mall, your ultimate shopping destination!
+                 We are committed to providing a unique and enjoyable shopping experience for our customers. 
+                From the latest fashion trends to high-tech gadgets, fresh organic food to cozy cafes,
+                 and exciting entertainment options, we have it all under one roof.</p>
+            <p>Our mall offers a diverse range of stores and services to cater to all your needs.
+                 Whether you're looking for the perfect outfit, a delicious meal,
+                  or a fun day out with family and friends, Carrefour Mall is the place to be.</p>
+            <p>Don't miss our exclusive deals and special offers available only at Carrefour Mall.
+                 Sign up for our newsletter to stay updated on the latest promotions and events.
+                  Enjoy a seamless and memorable shopping experience with us!</p>
+        </div>
+
+        <div class="product-section">
+     
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="image/clothes.jfif" alt="shoes&clothes">
+                    <div class="product-content">
+                        <h3>Shoes & Clothes</h3>
+                        <p>"When it comes to looking great, finding the right accessories is vital.
+                            We’ve got you covered with gorgeous handbags, shoes, and other accessories at dedicated stores in the mall.
+                            Whether you’re looking for designer originals or more budget-friendly versions of the latest looks, 
+                            you can browse our choice of top brands and stores."</p> 
+                        <a href="shopshoes.html"><button>Checkout</button></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="image/jewery.jfif" alt="Jewellery">
+                    <div class="product-content">
+                        <h3>Jewellery</h3>
+                        <p>"Show a loved one how much you care or treat yourself with beautiful jewellery and watches to suit every personal style and budget.
+                            With nearly 20 jewellery stores to choose from,
+                            it’s easy to shop for engagement rings, men’s watches
+                            , and necklaces when you spend a day in the mall."</p> 
+                        <a href="shopjewerlty.html"><button>Checkout</button></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="image/cinema2.jfif" alt="Cinemas">
+                    <div class="product-content">
+                        <h3>Cinemas</h3>
+                        <p>"VOX Cinemas at Carrefour Mall offers the biggest blockbusters using the best and the
+                            latest in technology and comfort.
+                            With VOX MAX, 
+                            enjoy blockbusters on a bigger screen with surrounded sound and comfortable 
+                            seats or experience a new way to enjoy movies."</p> 
+                        <a href="order.html"><button>Checkout</button></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="image/restourent.jfif" alt="Restaurants">
+                    <div class="product-content">
+                        <h3>Restaurants</h3>
+                        <p>"You will find all your favourite restaurants at the Carrefour Mall, making it the ideal place for a quick bite at any time of the day.
+                            With our choice of food places located around the mall, they’re the perfect choice for a quick stop after a movie, 
+                            when you’re shopping, or after you’ve been skiing at the nearby indoor ski centre."</p>
+                        <a href=""><button>Checkout</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insert your paragraph here -->
+     
+       
+        </div>
+        <div class="newsletter-signup">
+            <h2>Subscribe to Our Newsletter</h2>
+           
+<form action="subscribe.php" method="post">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+    <p>Get 10% off your first purchase when you subscribe</p>
+</form>
+
+        </div>
+        <div class="social-media-links">
+            <a href="https://www.instagram.com/direct/inbox/">Instagram</a>
+            <a href="">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carrefour&mdash; Mall. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-of-service">Terms of Service</a></li>
+            <li><a href="contactmall.html">Contact +250780146863</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

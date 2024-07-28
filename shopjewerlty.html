@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Shop - ShoeMall250</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional or overridden styles can go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #333;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+       
+        }
+
+        .search-bar {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav .search-bar input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        nav .search-bar button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+        .categories {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .categories h2 {
+            margin: 0;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .product-item h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .product-item p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .product-item .price {
+            font-size: 1.2rem;
+            color: #e74c3c;
+            margin: 0.5rem 0;
+        }
+
+        .product-item button {
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .product-item button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .order-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .order-button:hover {
+            background-color: #f4a261;
+        }
+    </style>
+    <script>
+        function addToCart(itemName, itemPrice) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemIndex = cart.findIndex(item => item.name === itemName);
+
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += 1; // Increase quantity if item already exists
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(itemName + ' has been added to your cart.');
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = itemCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><center><a href="index.html"> 2024 Carrefour&mdash; Mall.</a></center></div>
+        <nav>
+            <ul>
+                <li><a href="mall.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restourant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for jewelry...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop -->
+    <section id="shop">
+        <div class="categories">
+            <h2>Shop Jewelry</h2>
+        </div>
+        <div class="product-grid">
+            <!-- Product Items Here -->
+            <div class="product-item">
+                <img src="image/Pendants.jfif" alt="Pendants">
+                <h3>Pendants</h3>
+                <p class="price">$50.00</p>
+                <button onclick="addToCart('Pendants', 50.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/Statement Necklaces.jfif" alt="Statement Necklaces">
+                <h3>Statement Necklaces</h3>
+                <p class="price">$70.00</p>
+                <button onclick="addToCart('Statement Necklaces', 70.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/watch.jfif" alt="Digital Watches">
+                <h3>Digital Watches</h3>
+                <p class="price">$60.00</p>
+                <button onclick="addToCart('Digital Watches', 60.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/Tennis Bracelets.jfif" alt="Tennis Bracelets">
+                <h3>Tennis Bracelets</h3>
+                <p class="price">$55.00</p>
+                <button onclick="addToCart('Tennis Bracelets', 55.00)">Add to Cart</button>
+            </div>
+            <div class="product-item">
+                <img src="image/Stackable Rings.jfif" alt="Stackable Rings">
+                <h3>Stackable Rings</h3>
+                <p class="price">$80.00</p>
+                <button onclick="addToCart('Stackable Rings', 80.00)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <a href="cartpage.html" class="order-button">View Cart (<span id="cart-count">0</span>)</a>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carrefour&mdash; Mall. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#terms-of-service">Terms of Service</a></li>
+            <li><a href="contactmall.html">Contact +250780146863</a></li>
+        </ul>
+ 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrefour Mall</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        header .logo {
+            text-align: center;
+        }
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        header .search-bar {
+            margin-left: auto;
+            display: flex;
+        }
+        #about {
+            padding: 30px;
+            text-align: center;
+        }
+        #services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .service {
+            width: 20%;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .service img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .service-description {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        footer {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href="index.html">Carrefour Mall</a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shopmall.html">Shop</a></li>
+                <li><a href="restourant.html">Restaurant</a></li>
+                <li><a href="aboutmall.html">About Us</a></li>
+                <li><a href="entertainment.html">Entertainment</a></li>
+                <li><a href="contactmall.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for shoes...">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Us -->
+    <section id="about">
+        <div class="about-us">
+            <h2>About Carrefour Mall</h2>
+            <p>Our Mall offers different services in general, shopping for different products including fashion, jewellery, electronics and also hypermarket is involved.</p>
+            <p>In addition to our mall, there's also entertainment where you can watch movies and play games. If you're hungry, there's also restaurants where you could grab something to eat as you continue your day.</p>
+            <p>We offer the following services, feel free to visit us!</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="service">
+            <img src="image/shopping.jpg" alt="Shopping">
+            <div class="service-description">Fashion, Jewellery, Clothes, and more.</div>
+        </div>
+        <div class="service">
+            <img src="image/resto.jpg" alt="Restaurant">
+            <div class="service-description">Diverse dining options to satisfy your hunger.</div>
+        </div>
+        <div class="service">
+            <img src="image/gaming.jpg" alt="Entertainment">
+            <div class="service-description">Movies, games, and fun activities for all ages.</div>
+        </div>
+        <div class="service">
+            <img src="image/hypermarket.jpg" alt="Hypermarket">
+            <div class="service-description">A wide range of products for all your needs.</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carrefour Mall. All rights reserved.</p>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutmall.html">About</a></li>
+            <li><a href="contactmall.html">Contact</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
